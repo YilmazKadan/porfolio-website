@@ -1,0 +1,1029 @@
+/* *************************
+    FONTLAR
+***************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,300&display=swap');
+
+
+
+
+/* *************************
+    Değişkenler
+***************/
+:root {
+    --main-color: #075aaa;
+    --blue: #0000ff;
+    --blue-dark: #18293c;
+    --orange: #ffa500;
+    --green-yellow: #cddc39;
+    --pink-light: #efa2b4;
+    --cyan-light: #aef1ee;
+    --white: #ffffff;
+    --white-alpha-40: rgba(255, 255, 255, 0.40);
+    --white-alpha-25: rgba(255, 255, 255, 0.25);
+    --backdrop-filter-blur: blur(5px);
+
+}
+
+/* ***************************** 
+
+ Global ayarlar 
+
+ ***************************/
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+::before,
+::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: #1c92d2;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #f2fcfe, #1c92d2);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #f2fcfe, #1c92d2);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+
+
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--blue-dark);
+    line-height: 1.5;
+    overflow-x: hidden;
+    padding: 5vh 15px;
+}
+
+body.scroll-none {
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--green-yellow);
+    z-index: -1;
+    opacity: 0.12;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+}
+
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+}
+
+button {
+    font-family: inherit;
+    user-select: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: middle;
+}
+
+/*  Tüm sectionlara border ve yükseklik veriyoruz. */
+section {
+    border: 5px solid var(--white-alpha-40);
+    min-height: 90vh;
+    border-radius: 30px;
+    backdrop-filter: var(--backdrop-filter-blur);
+    display: none;
+}
+
+section.active {
+    display: block;
+}
+
+section.fade-out {
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+section.fade-in {
+    animation: fadein 0.5s ease-in-out forwards;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.main {
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.sec-padding {
+    padding: 80px 0;
+}
+
+.flex-end {
+    justify-content: flex-end;
+}
+.space-between {
+    justify-content: space-between;
+}
+
+/* Section başlık*/
+.section-title {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    text-transform: capitalize;
+}
+
+/* Flex yapısını bu class üzerinden sağlayacağız */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Container */
+.container {
+    padding: 0 40px;
+    width: 100%;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+/* Custon Scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--white);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+/* Buttons */
+.btn {
+    line-height: 1.5;
+    color: var(--main-color);
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    padding: 10px 28px;
+    display: inline-block;
+    border-radius: 30px;
+    font-weight: 500;
+    text-transform: capitalize;
+    font-family: inherit;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transition: color 0.3s ease;
+    /*
+     Bunu kullanmamızdaki amaç :
+     butonun before'sine z-index verdiğimiz zaman
+     buttonun arka plan rengi transparan ve before rengi ile karışım oluyor
+     arka plana blur verince sorun çözülüyor, bir diğer çözüm ise 
+     butona arka plan vermemek :)
+    */
+    backdrop-filter: var(--backdrop-filter-blur);
+}
+
+/* Buton içerisinden animasyonlu bir renk dolması için bu */
+.btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--main-color);
+    z-index: -1;
+    transition: width 0.3s ease;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    color: white;
+    cursor: pointer;
+}
+
+/* Animation keyframes */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes zoomInOut{
+    0%,100%{
+        transform: scale(0.5);
+    }
+    50%{
+        transform: scale(1);
+    }  
+}
+@keyframes bounceTop{
+    0%,100%{
+        transform: translateY(-50px);
+    }
+    50%{
+        transform: translateY(0px);
+    }
+}
+/* Overlay */
+.overlay{
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: var(--backdrop-filter-blur);
+    z-index: 21;
+    visibility: hidden;
+
+}
+.overlay.active{
+    visibility: visible;
+}
+/* Arka plan daireleri */
+.bg-circles{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    max-width: 1200px;
+    width: calc(100% - 30px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bg-circles div{
+    position: absolute;
+    border-radius: 50%;
+}
+.bg-circles .circle-1{
+    height: 60px;
+    width: 60px;
+    background-color: var(--blue);
+    left: 5%;
+    top: 10%;
+    opacity: 0.3;
+    animation : zoomInOut  8s  linear infinite;
+}
+.bg-circles .circle-2{
+    height: 80px;
+    width: 80px;
+    background-color: var(--main-color);
+    left: 40%;
+    top: 50%;
+    opacity: 0.4;
+    animation: bounceTop 5s ease-in-out infinite;
+}
+.bg-circles .circle-3{
+    height: 120px;
+    width: 120px;
+    background-color: var(--white);
+    top:40%;
+    right: -60px;
+    opacity: 0.6;
+}
+.bg-circles .circle-4{
+    height: 50px;
+    width: 50px;
+    background-color: var(--orange);
+    top: 80%;
+}
+
+/*------------
+Header 
+------------*/
+.header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 20px 0 0;
+}
+
+.header.active {
+    position: fixed;
+    top: 35px;
+    padding: 20px 15px;
+}
+
+.header.active .container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.header .nav-toggler {
+    width: 50px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 15px;
+}
+.header.active i.fa-home,
+.header .nav-toggler{
+    z-index: 1;
+}
+
+.header .nav-toggler:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.header .nav-toggler:hover span {
+    background-color: white;
+}
+
+.header.active .nav-toggler span {
+    background-color: transparent;
+}
+
+.header .nav-toggler span {
+    height: 2.3px;
+    width: 24px;
+    background-color: var(--main-color);
+    position: relative;
+}
+
+.header .nav-toggler span::after,
+.header .nav-toggler span::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: all .3s ease;
+}
+
+.header .nav-toggler span::before {
+    left: 0;
+    transform: translateY(-8px);
+}
+
+.header .nav-toggler span::after {
+    right: 0;
+    transform: translateY(8px);
+}
+
+.header.active .nav-toggler span::before {
+    transform: rotate(45deg);
+}
+
+.header.active .nav-toggler span::after {
+    transform: rotate(-45deg);
+}
+
+
+.header:not(.active) .nav-toggler:hover span::after,
+.header:not(.active) .nav-toggler:hover span::before {
+    width: 50%;
+}
+
+.header .nav-toggler:hover span::after,
+.header .nav-toggler:hover span::before {
+    background-color: white;
+}
+
+.header .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 35px 15px;
+    overflow-y: auto;
+    visibility: hidden;
+}
+
+.header.active .nav {
+    visibility: visible;
+}
+
+.header .nav-inner {
+    min-height: calc(100vh - 70px);
+    max-width: 1200px;
+    margin: auto;
+    background-color: var(--white-alpha-25);
+    border: 3px solid var(--white-alpha-40);
+    backdrop-filter: var(--backdrop-filter-blur);
+    border-radius: 30px;
+    padding: 50px 0;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.header.active .nav-inner {
+    opacity: 1;
+}
+
+.header .nav-inner ul li {
+    text-align: center;
+}
+
+.header .nav-inner ul li a {
+    font-size: 40px;
+    text-transform: capitalize;
+    color: var(--blue-dark);
+    display: block;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: color .3s ease;
+    position: relative;
+}
+
+.header .nav-inner ul li a:hover {
+    color: var(--main-color)
+}
+
+.header .nav-inner ul li a:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 100%;
+    width: 0;
+    background-color: var(--white-alpha-25);
+    z-index: -1;
+    transition: width 0.3s ease;
+    border-radius: 20px;
+}
+
+.header .nav-inner ul li a:hover::before {
+    width: 100%;
+}
+.header i.fa-home{
+    font-size:40px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+}
+/************************* 
+
+HOME SECTİON
+
+********************** */
+.home-section {
+    display: none;
+    padding: 120px 0;
+}
+
+.home-section.active {
+    display: flex;
+}
+
+.home-text,
+.home-img {
+    width: 50%;
+    padding: 15px;
+}
+
+.home-text p {
+    font-size: 18px;
+}
+
+.home-text h1 {
+    font-size: 50px;
+    text-transform: capitalize;
+}
+
+.home-text h2 {
+    font-size: 20px;
+    text-transform: capitalize;
+    font-weight: 300;
+}
+
+.home-text .btn {
+    margin: 20px 0 0 0;
+}
+
+.home-img .img-box {
+    width: 360px;
+    background-color: var(--white-alpha-25);
+    border-radius: 50%;
+    border: 8px solid var(--white-alpha-40);
+    margin: auto;
+}
+
+.home-img .img-box img {
+    width: 100%;
+    border-radius: 50%;
+    user-select: none;
+}
+
+/* 
+ ABOUT SECTION
+*/
+.about-img {
+    width: 40%;
+    padding: 0 60px;
+}
+
+.about-text {
+    width: 60%;
+}
+
+.about-img .img-box {
+    border: 2px solid var(--white-alpha-40);
+    background-color: var(--white-alpha-25);
+    max-width: 380px;
+    margin: auto;
+    border-radius: 20px;
+}
+
+.about-text p {
+    line-height: 2.1rem;
+}
+
+.about-text h3 {
+    text-transform: capitalize;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.about-text .skills {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.about-text .skill-item {
+    background-color: var(--white-alpha-25);
+    border: 1px solid var(--white-alpha-40);
+    padding: 5px 15px;
+    text-transform: capitalize;
+    border-radius: 10px;
+    margin: 0 10px 10px 0;
+    position: relative;
+}
+
+.about-text .skill-item::before {
+    content: '';
+    border: none;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background-color: var(--main-color);
+    transition: width 0.3s ease-in-out;
+    z-index: -1;
+}
+
+.about-text .skill-item:hover {
+    background: transparent;
+    color: white;
+}
+
+.about-text .skill-item:hover::before {
+    border: 1px solid var(--white-alpha-40);
+    width: 100%;
+}
+
+.about-tabs .tab-item {
+    padding: 2px 0;
+    background-color: transparent;
+    border: none;
+    text-transform: capitalize;
+    display: inline-block;
+    color: var(--blue-dark);
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 0 30px 0 0;
+    position: relative;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+}
+
+.about-tabs .tab-item:last-child {
+    margin: 0;
+}
+
+.about-tabs .tab-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 1px;
+    background-color: var(--blue-dark);
+    transition: width 0.2s ease;
+}
+
+.about-tabs .tab-item:hover::before {
+    width: 100%;
+}
+
+.about-tabs .tab-item.active {
+    opacity: 1;
+    color: var(--main-color);
+    font-weight: 600;
+    cursor: auto;
+}
+
+.about-tabs .tab-item.active::before {
+    width: 100%;
+    background-color: var(--main-color);
+}
+
+.about-text .timeline {
+    position: relative;
+}
+
+.about-text .timeline::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    left: 5px;
+    width: 1px;
+    top: 0;
+    background-color: var(--main-color);
+}
+
+.about-text .tab-content {
+    padding: 40px 0;
+    display: none;
+}
+
+.about-text .tab-content.active {
+    display: block;
+}
+
+.about-text .timeline-item:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.about-text .timeline-item {
+    margin-bottom: 30px;
+    position: relative;
+    padding: 10px 0 0 40px;
+}
+
+.about-text .timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    left: 0.5px;
+    height: 10px;
+    width: 10px;
+    background-color: var(--main-color);
+}
+
+.about-text .timeline-item .date {
+    display: block;
+    color: var(--main-color);
+    font-weight: 400;
+    margin: 0 0 10px;
+}
+
+.about-text .timeline-item h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+    margin: 0 0 10px;
+}
+
+.about-text .timeline-item h4 span {
+    font-weight: 400;
+
+}
+
+/* Portfolio Alanı */
+.portfolio-section {
+    padding: 10px 0;
+}
+
+.portfolio-item {
+    width: calc((100% / 3) - 30px);
+    margin: 0 15px 30px;
+}
+
+.portfolio-item h3 {
+    font-size: 20px;
+    margin: 10px 0;
+    text-transform: capitalize;
+}
+
+.portfolio-item-thumbnail {
+    padding: 10px;
+    background-color: var(--white-alpha-25);
+    border-radius: 10px;
+    height: 200px;
+}
+
+.portfolio-item-thumbnail img {
+    width: 100%;
+    height: 100%;
+    transition: all .3s;
+    border-radius: 10px;
+}
+
+.portfolio-item-thumbnail img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Portfolyo Popup */
+.portfolio-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+    backdrop-filter: blur(2000px);
+    overflow-x: auto;
+    visibility: hidden;
+}
+
+.portfolio-popup.open {
+    visibility: visible;
+    overflow-y: auto;
+}
+
+.pp-inner {
+    min-height: 100vh;
+    padding: 40px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pp-content {
+    width: 80%;
+    max-width: 100%;
+    background-color: var(--white-alpha-25);
+    padding: 30px;
+    border-radius: 10px;
+    border: 3px solid var(--white-alpha-40);
+    opacity: 0.4;
+    transform: scale(0.5);
+}
+
+.portfolio-popup.open .pp-content {
+    opacity: 1;
+    transform: scale(1);
+    transition: 0.2s all;
+}
+
+.pp-thumbnail {
+    text-align: center;
+}
+
+.pp-thumbnail img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+.pp-header {
+    position: relative;
+}
+
+.pp-header .btn {
+    height: 60px;
+    width: 60px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: -55px;
+    top: -55px;
+}
+
+.pp-header .btn i {
+    font-size: 24px;
+}
+
+.pp-header h3 {
+    font-size: 25px;
+    text-transform: capitalize;
+    margin: 20px 0 15px;
+}
+
+.pp-body .description {
+    margin-bottom: 20px;
+}
+
+.pp-body .general-info ul li {
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.pp-body .general-info ul li span {
+    font-weight: 300;
+}
+
+.pp-body .general-info ul li a {
+    text-transform: lowercase;
+    color: var(--main-color);
+}
+
+/* İletişim section */
+
+.contact-form,
+.contact-info {
+    width: 50%;
+    padding: 0 15px;
+}
+
+.contact-form .input-group {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact-form .input-control::placeholder {
+    color: var(--blue-dark);
+    opacity: .7;
+    font-weight: 400;
+}
+
+.contact-form .input-control {
+    display: block;
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    border: none;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: var(--white-alpha-25);
+    padding: 0 20px;
+    color: var(--blue-dark);
+    border: 1px solid transparent;
+}
+
+.contact-form .input-control:focus {
+    border: 2px solid;
+    border-color: var(--white-alpha-40);
+}
+
+.contact-form textarea.input-control {
+    height: 120px;
+    resize: none;
+    padding-top: 10px;
+}
+
+.contact-info-item {
+    margin: 0 0 30px;
+    padding: 0 0 0 20px;
+}
+
+.contact-info-item h3 {
+    font-size: 20px;
+    text-transform: capitalize;
+    margin: 0 0 5px;
+}
+
+.contact-info-item .social-media a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    background-color: var(--white-alpha-25);
+    border: var(--white-alpha-40);
+    border-radius: 50%;
+    color: var(--main-color);
+    transition: all .4s ease;
+}
+
+.contact-info-item .social-media a:hover {
+    color: var(--white);
+    background-color: var(--main-color);
+}
+/* Media Queries */
+@media (max-width: 991px){
+    .container{
+        padding: 0;
+    }
+    .home-text,
+    .home-img{
+        width: 100%;
+    }
+    .home-text{
+        text-align: center;
+    }
+    .home-img{
+        /* Bu kod divi üste almak için */
+        order: -1;
+    }
+    .home-img .img-box{
+        max-width: 300px;
+    }
+    .home-text .btn{
+        margin: 5px 7px 15px;
+    }
+    /* Circle */
+    .bg-circles .circle-2{
+        top:20%;
+    }
+}
+@media (max-width: 767px){
+    .about-img,
+    .about-text{
+        width: 100%;
+    }
+    .about-text{
+        margin-top: 30px;
+    }
+    .portfolio-item{
+        width: calc(50% - 30px);
+    }
+    .pp-inner{
+        padding: 30px 35px;
+    }
+    .pp-inner .pp-content{
+        width: calc(100% - 10px);
+    }
+    .portfolio-item-thumbnail{
+        height: 300px;
+    }
+
+    .contact-form,
+    .contact-info{
+        width: 100%;
+    }
+    .contact-form{
+        margin-bottom: 20px;
+        order: 1;
+    }
+   
+}
+@media (max-width: 575px){
+    .header .nav-inner ul li a{
+        font-size:30px;
+    }
+    .portfolio-item{
+        width: calc(100% - 30px);
+    }
+}

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta lang="tr">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio-Website</title>
+    <link rel="stylesheet" href="css/fontawesome.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Overlay Başlangıç -->
+    <div class="overlay"></div>
+    <!-- Overlay Bitiş -->
+    <!-- Arka plan daireleri başlangıç-->
+    <div class="bg-circles">
+        <div class="circle-1"></div>
+        <div class="circle-2"></div>
+        <div class="circle-3"></div>
+        <div class="circle-4"></div>
+    </div>
+    <!-- Arka plan daireleri bitiş -->
+    <!-- Main Start -->
+    <div class="main">
+        <!-- Header Start -->
+        <header class="header">
+            <div class="container">
+                <div class="row space-between">
+                   <i class="fas fa-home home-link"></i>
+                    <button type="button" class="nav-toggler">
+                        <span></span>
+                    </button>
+                    <nav class="nav">
+                        <div class="nav-inner">
+                            <ul>
+                                <li><a href="#anasayfa" class="nav-item link-item">anasayfa</a></li>
+                                <li><a href="#hakkimda" class="nav-item link-item">hakkımda</a></li>
+                                <li><a href="#portfolyo" class="nav-item link-item">portfolyo</a></li>
+                                <li><a href="#iletisim" class="nav-item link-item">iletişim</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <!-- Heade End-->
+        <!-- Home Section Start -->
+        <section class="home-section align-items-center active" id="anasayfa">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="home-text">
+                        <p>Merhabalar, ben</p>
+                        <h1>Yılmaz Kadan</h1>
+                        <h2>Full stack web geliştiriciyim</h2>
+                        <a href="#hakkimda" class="btn link-item">Hakkımda</a>
+                        <a href="#portfolyo" class="btn link-item">Portfolyo</a>
+                    </div>
+                    <div class="home-img">
+                        <div class="img-box">
+                            <img src="img/avatar1.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Home Section End -->
+        <!-- About Section Start -->
+        <section class="about-section sec-padding" id="hakkimda">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h2>Hakkımda</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="about-img">
+                        <div class="img-box">
+                            <img src="img/pngBen.png" alt="" class="user-img">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <p>Lorem, ipsum dolor sit amet
+                            consectetur adipisicing elit.
+                            Nostrum illum ex corporis illo e
+                            a, doloremque, rerum suscipit maiores explicabo atque
+                            eum dolores maxime soluta et! Soluta cumque recusandae corrupti voluptatibus.
+                            Tenetur libero, neque voluptas earum quam deserunt similique illo sit,
+                            molestiae harum totam qui eius exercitationem nihil veniam modi ex!
+                            Ut dolorem modi harum velit officia illum hic nesciunt magnam.</p>
+                        <h3>Yetkinlikler</h3>
+                        <div class="skills">
+                            <span class="skill-item">PHP</span>
+                            <span class="skill-item">SQl</span>
+                            <span class="skill-item">Javascript</span>
+                            <span class="skill-item">Html</span>
+                            <span class="skill-item">CSS</span>
+                            <span class="skill-item">Google Search</span>
+                            <span class="skill-item">Google Search</span>
+                            <span class="skill-item">Google Search</span>
+                            <span class="skill-item">Halil Kadan</span>
+                        </div>
+                        <div class="about-tabs">
+                            <button type="button" class="tab-item active" data-target="#egitim">eğitim</button>
+                            <button type="button" class="tab-item" data-target="#deneyim">Deneyim</button>
+                        </div>
+                        <!-- Eğitim başlangıç -->
+                        <div class="tab-content active" id="egitim">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <span class="date">2020 - Devam ediyor</span>
+                                    <h4>Bilgisayar Mühendisliği - <span>Düzce Üniversitesi</span></h4>
+                                    <p>Bilgisayar Programcılığından mezun olur olmaz aynı sene DGS Sınavını kazanıp
+                                        Bilgisayar Mühendisliği Bölümüne geçiş yaptım.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="date">2018 - 2020</span>
+                                    <h4>Bilgisayar Programcılığı - <span>ESOGÜ Sivrhisar MYO</span></h4>
+                                    <p>Bilgisayar Programcılığı bölümünden <span class="text-main">3.38</span> ortalama
+                                        ile bölüm birincisi olarak mezun oldum.</p>
+                                </div>
+                                <div class="timeline-item">
+                                    <span class="date">2013 - 2017</span>
+                                    <h4>Bilişim Teknolojileri Bölümü - <span>Kıraç İMKB EML</span></h4>
+                                    <p>Lise eğitimimi Bilişim Teknolojileri bölümü Veritabanı Programcılığı alanında
+                                        tamamladım.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Eğitim son -->
+                        <!-- Deneyim Başlangıç -->
+                        <div class="tab-content" id="deneyim">
+                            <div class="timeline">
+                                <div class="timeline-item">
+                                    <span class="date">3 ay (Lise Yaz Stajı) - 2016</span>
+                                    <h4>E-ticaret Stajyeri - <span>Sportive.com.tr Yönetim binası / Beylikdüzü </span>
+                                    </h4>
+                                    <p>E-ticaret sitesinde bulunan manken fotoğraflarının hatalarının <span
+                                            class="text-main">photoshop</span> ile
+                                        giderilmesi ve daha güzel bir hale getirilmesi alanında staj görevimi tamamladım
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Deneyim Bitiş -->
+                        <a href="cv.pdf" class="btn">CV'mi indir</a>
+                        <a href="#iletisim" class="btn link-item">iletişim</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- About Section End -->
+        <!-- Portfolio Section Start -->
+        <section class="portfolio-section" id="portfolyo">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h2>Yaptığım projeler</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Portfolyo Item Start -->
+                    <div class="portfolio-item">
+                        <div class="portfolio-item-thumbnail">
+                            <img src="img/portfolio/portfolyo1.jpg" alt="portfolio item image" class="portfolio-img">
+                        </div>
+                        <h3 class="portfolio-item-title">Portfolyo Websitesi</h3>
+                        <button type="button" class="btn view-project-btn">Projeyi İncele</button>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-item-thumbnail">
+                            <img src="img/portfolio/portfolyo1.png" alt="portfolio item image" class="portfolio-img">
+                        </div>
+                        <h3 class="portfolio-item-title">Youtube Clonu | Pure CSS</h3>
+                        <button type="button" class="btn view-project-btn">Projeyi İncele</button>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-item-thumbnail">
+                            <img src="img/portfolio/portfolyo3.jpg" alt="portfolio item image" class="portfolio-img">
+                        </div>
+                        <h3 class="portfolio-item-title">Kurumsal Websitesi</h3>
+                        <button type="button" class="btn view-project-btn">Projeyi İncele</button>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-item-thumbnail">
+                            <img src="img/portfolio/portfolyo4.jpg" alt="portfolio item image" class="portfolio-img">
+                        </div>
+                        <h3 class="portfolio-item-title">Portfolyo Website</h3>
+                        <button type="button" class="btn view-project-btn">Projeyi İncele</button>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-item-thumbnail">
+                            <img src="img/portfolio/portfolyo5.jpg" alt="portfolio item image" class="portfolio-img">
+                        </div>
+                        <h3 class="portfolio-item-title">Netflix Websitesi</h3>
+                        <button type="button" class="btn view-project-btn">Projeyi İncele</button>
+                    </div>
+                    <div class="portfolio-item">
+                        <div class="portfolio-item-thumbnail">
+                            <img src="img/portfolio/portfolyo6.jpg" alt="portfolio item image" class="portfolio-img">
+                        </div>
+                        <h3 class="portfolio-item-title">Exxen Websitesi</h3>
+                        <button type="button" class="btn view-project-btn">Projeyi İncele</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Portfolio Section End -->
+        <!-- İletişim alanı başlangıç -->
+        <section class="contact-section sec-padding" id="iletisim">
+            <div class="container">
+                <div class="row">
+                    <div class="section-title">
+                        <h2>Bana ulaşın</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="contact-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="input-group">
+                                    <input type="text" placeholder="Adınız" class="input-control" required>
+                                </div>
+                                <div class="input-group">
+                                    <input type="Email" placeholder="Email adresiniz" class="input-control" required>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Mesaj Başlığı" class="input-control" required>
+                                </div>
+                                <div class="input-group">
+                                    <input type="text" placeholder="Adınız" class="input-control" required>
+                                </div>
+                                <div class="input-group">
+                                    <textarea name="mesaj" id="" cols="30" rows="10" class="input-control"
+                                        placeholder="Mesajınızı yazınız"></textarea>
+                                </div>
+                                <div class="submit-btn">
+                                    <button type="submit" class="btn">Mesaj yolla</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-info-item">
+                            <h3>Email</h3>
+                            <p>kadan8080@gmail.com</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <h3>Telefon</h3>
+                            <p>0543 250 00 00</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <h3>Sosyal medya hesaplarım</h3>
+                            <div class="social-media">
+                                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- İletişim alanı Bitiş -->
+
+
+
+
+
+
+
+
+
+        
+    </div>
+    <!-- Portfolyo Popup Başlangıç -->
+    <div class="portfolio-popup">
+        <div class="pp-inner">
+            <div class="pp-content">
+                <div class="pp-header">
+                    <button class="btn btn-close"><i class="fas fa-times"></i></button>
+                    <div class="pp-thumbnail">
+                        <img src="img/portfolio/portfolyo1.jpg" alt="">
+                    </div>
+                    <h3>Portfolyo Websitesi</h3>
+                    <div class="pp-body">
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam magnam hic nesciunt
+                                perspiciatis tempore itaque asperiores suscipit. Nulla recusandae dolore magni molestiae
+                                cum! Atque, laudantium quibusdam nobis facilis vel laborum.</p>
+                        </div>
+                        <div class="general-info">
+                            <ul>
+                                <li>Paylaşım Tarihi - <span>29 Ekim 2021</span></li>
+                                <li>Kullanılan teknolojiler - <span>HTML, CSS , Javascript</span></li>
+                                <li>Kullanım alanı - <span>Frontend</span></li>
+                                <li>Canlı Görünüm - <span><a href="https://yilmazkadan.github.io/YouTube-Website-Design/" target="_blank">www.yilmazkadan.com</a></span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolyo Popup Bitiş -->
+    <!-- Main bitiş -->
+</body>
+<!-- Scripts -->
+<script src="js/script.js"></script>
+
+</html>
