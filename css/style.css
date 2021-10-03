@@ -387,6 +387,9 @@ Header
 .header .nav-toggler{
     z-index: 1;
 }
+.header i.fa-home{
+    margin: 0 15px;
+}
 
 .header .nav-toggler:hover {
     background-color: var(--main-color);
@@ -1022,7 +1025,9 @@ HOME SECTİON
         margin-bottom: 20px;
         order: 1;
     }
-   
+   .section-title h2{
+       font-size: 18px;
+   }
 }
 @media (max-width: 575px){
     .header .nav-inner ul li a{

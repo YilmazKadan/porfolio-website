@@ -103,7 +103,9 @@ document.addEventListener("click", (e) => {
     // Popup alanının dışına tıklanıldığını ve bu alanın açma butonu veya görseli olmadığını  anladığımız anda kapatıyoruz.
     if (!e.target.classList.contains("view-project-btn") && !e.target.classList.contains("portfolio-img")) {
         portfolyoPopup.classList.remove("open");
-        document.body.classList.remove("scroll-none");
+        // Meünlerimizin bulunduğu header alanı aktif değil ise body'nin scrolunu aktifleştiriyoruz.
+        if(!document.querySelector(".header").classList.contains("active"))
+             document.body.classList.remove("scroll-none");
     }
 
 });
