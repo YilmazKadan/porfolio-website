@@ -116,6 +116,7 @@ section {
     min-height: 90vh;
     border-radius: 30px;
     backdrop-filter: var(--backdrop-filter-blur);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
     display: none;
 }
 
@@ -222,6 +223,7 @@ section.fade-in {
      butona arka plan vermemek :)
     */
     backdrop-filter: var(--backdrop-filter-blur);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
 }
 
 /* Buton içerisinden animasyonlu bir renk dolması için bu */
@@ -290,6 +292,7 @@ section.fade-in {
     height: 100%;
     width: 100%;
     backdrop-filter: var(--backdrop-filter-blur);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
     z-index: 21;
     visibility: hidden;
 
@@ -467,6 +470,7 @@ Header
     background-color: var(--white-alpha-25);
     border: 3px solid var(--white-alpha-40);
     backdrop-filter: var(--backdrop-filter-blur);
+    -webkit-backdrop-filter: var(--backdrop-filter-blur);
     border-radius: 30px;
     padding: 50px 0;
     border-radius: 30px;
@@ -800,6 +804,7 @@ HOME SECTİON
     height: 100%;
     z-index: 20;
     backdrop-filter: blur(2000px);
+    -webkit-backdrop-filter: blur(2000);
     overflow-x: auto;
     visibility: hidden;
 }
