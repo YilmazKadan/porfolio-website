@@ -802,7 +802,7 @@ HOME SECTİON
     height: 100%;
     z-index: 20;
     backdrop-filter: blur(2000px);
-    -webkit-backdrop-filter: blur(2000);
+    -webkit-backdrop-filter: blur(2000px);
     overflow-x: auto;
     visibility: hidden;
 }
