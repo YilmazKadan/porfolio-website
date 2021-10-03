@@ -801,8 +801,8 @@ HOME SECTİON
     width: 100%;
     height: 100%;
     z-index: 20;
-    backdrop-filter: blur(2000px);
     -webkit-backdrop-filter: blur(2000px);
+    backdrop-filter: blur(2000px);
     overflow-x: auto;
     visibility: hidden;
 }
